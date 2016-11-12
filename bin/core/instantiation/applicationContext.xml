@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+<!-- Instantiation with a constructor -->
+<bean id="helloWorld" class="core.instantiation.HelloWorld"/>
+
+<!-- Instantiation with a static factory method -->
+<bean id="manager" class="core.instantiation.PlatformManager" factory-method="getInstance"/>
+
+<!-- Instantiation with a instance factory method -->
+<bean id="provider" class="core.instantiation.HelloWorldProvider"/>
+<bean id="hworld" factory-bean="provider" factory-method="getHelloWorld"/>
+
+</beans>

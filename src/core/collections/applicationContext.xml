@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+<bean name="hworld" class="core.collections.Message"/>
+
+<bean name="cu" class="core.collections.CollectionUtil">
+	<!-- List -->
+	<property name="strList">
+		<list>
+			<value>List Item1</value>
+			<value>List Item2</value>
+		</list>
+	</property>
+	
+	<property name="refList">
+		<list>
+			<ref bean="hworld"/>
+			<ref bean="hworld"/>
+		</list>
+	</property>
+	
+	<!-- Set -->
+	<property name="strSet">
+		<set>
+			<value>Set Item1</value>
+			<value>Set Item2</value>
+		</set>
+	</property>
+	
+	<property name="refSet">
+		<set>
+			<ref bean="hworld"/>
+			<ref bean="hworld"/>
+		</set>
+	</property>
+	
+	<!-- Map -->
+	<property name="strMap">
+		<map>
+			<entry key="key" value="Map Value"/>
+		</map>
+	</property>
+	
+	<property name="refMap">
+		<map>
+			<entry key="key" value-ref="hworld"/>
+		</map>
+	</property>
+</bean>
+
+</beans>
